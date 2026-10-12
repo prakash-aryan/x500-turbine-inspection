@@ -51,7 +51,7 @@ fi
 # stop the recorder cleanly (bag index) when the mission ends or the container is stopped
 finish() {
   log "stopping the recorder"
-  [ -n "${BAG_PID:-}" ] && kill -INT $BAG_PID 2>/dev/null
+  [ -n "${BAG_PID:-}" ] && kill -TERM $BAG_PID 2>/dev/null   # background jobs of a script ignore SIGINT
   for _ in $(seq 60); do
     { [ -n "${BAG_PID:-}" ] && kill -0 $BAG_PID 2>/dev/null; } || break
     sleep 1
