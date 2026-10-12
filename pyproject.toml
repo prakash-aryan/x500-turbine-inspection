@@ -1,0 +1,6 @@
+[project]
+name = "x500-turbine-inspection"
+version = "0.1.0"
+description = "Wind turbine inspection with a PX4 X500 in Isaac Sim: procedural turbine, defects, coverage planning"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pillow", "usd-core"]
